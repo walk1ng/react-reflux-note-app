@@ -4,8 +4,14 @@ var Note = require(./Note.jsx);
 var NoteList = React.createClass({
 	getInitialState:function(){
 		return {
-			
+			activeNoteId:null,
 		}
+	},
+
+	setActiveNote:function(id){
+		this.setState({
+			activeNoteId: id,
+		})
 	},
 
 
@@ -14,15 +20,15 @@ var NoteList = React.createClass({
 		var notes = this.props.notes.concat().reverse();
 		var noteNotes = notes.map(function(note){
 			return (
-				<Note key={note._id} note={note} />
-			)
-		})
-
+				<Note key={note._id} active={self.state.activeNoteId===note._id} note={note} onSelect={self.setActiveNote} onEdit={self.props.onEdit} />
+			);
+		});
 		return (
 			<div className="list-group">
 				{noteNodes}
 			</div>
 		)
 	},
+});
 
-})
+module.exports = NoteList;

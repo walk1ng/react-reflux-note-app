@@ -23,14 +23,20 @@ var NoteListBox = React.createClasse({
 		this.unsubscribe();
 	},
 
+	onAdd:function(event){
+		event.preventDefault();
+		this.props.onAdd();
+		this.refs.noteList.setActiveNode(null);
+	},
+
 	render:function(){
 		return (
 			<div className="col-md-4">
-				<NoteList notes={this.state.notes} />
+			<div className="cemtered"><a href="" onClick={this.onAdd}>Add New</a></div>
+				<NoteList ref="noteList" notes={this.state.notes} onEdit={this.props.onEdit} />
 			</div>
 		)
 	}
-
 });
 
 module.exports = NoteListBox;
