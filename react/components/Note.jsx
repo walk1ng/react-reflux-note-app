@@ -17,3 +17,5 @@ var Note = React.createClass({
 		)
 	},
 });
+
+module.exports = Note;
