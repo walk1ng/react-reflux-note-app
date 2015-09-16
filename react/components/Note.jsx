@@ -13,7 +13,7 @@ var Note = React.createClass({
 		var className = this.props.active ? 'active' : null;
 
 		return (
-			<a href="#" className={'lsit-group-item '+className} onClick={this.handleEdit.bind(null,note._id)}>{title}</a>
+			<a href="#" className={'list-group-item '+className} onClick={this.handleEdit.bind(null,note._id)}>{title}</a>
 		)
 	},
 });
