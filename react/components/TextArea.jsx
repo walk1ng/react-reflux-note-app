@@ -1,3 +1,7 @@
+/**
+ * @jsx React.DOM
+ */
+
 var React = require('react');
 
 var TextArea = React.createClass({
@@ -14,6 +18,7 @@ var TextArea = React.createClass({
 	},
 
 	handleSave:function(){
+		alert('hello');
 		this.props.onSave(this.props.noteText,this.props.id);
 		if(!this.props.id){
 			this.refs.textarea.getDOMNode().value="";
@@ -21,20 +26,24 @@ var TextArea = React.createClass({
 		}
 	},
 
+	testxxx:function(){
+		alert('xxx');
+	},
+
 	compnentWillReceiveProps:function(nextProps){
 		this.setState({
 			noteText: nextProps.noteText,
 		});
 		if(!nextProps.id){
-			this.refs.textarea.getDOMNode().focus();
+			this.refs.textArea.getDOMNode().focus();
 		}
-	}
+	},
 
 	render:function(){
 		return (
 			<div>
-				<textarea className="form-control" ref="textarea" cols="100" rows="20" value={this.state.noteText} onChange={this.handleChange}></textarea><br/>
-				<input type="button" value="Save" className="btn btn-success btn-lg" onClick={this.handleSave} />
+				<textarea className="form-control" ref="textArea" cols="100" rows="20" value={this.state.noteText} onChange={this.handleChange}></textarea><br/>
+				<input type="button" value="Savezzz" className="btn btn-success btn-lg" onClick={this.testxxx} />
 			</div>
 		)
 	},

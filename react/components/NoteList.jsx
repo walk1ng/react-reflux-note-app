@@ -1,5 +1,9 @@
+/**
+ * @jsx React.DOM
+ */
+
 var React = require('react');
-var Note = require(./Note.jsx);
+var Note = require('./Note.jsx');
 
 var NoteList = React.createClass({
 	getInitialState:function(){
@@ -25,7 +29,7 @@ var NoteList = React.createClass({
 		});
 		return (
 			<div className="list-group">
-				{noteNodes}
+				{noteNotes}
 			</div>
 		)
 	},

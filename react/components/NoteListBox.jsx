@@ -1,8 +1,12 @@
+/**
+ * @jsx React.DOM
+ */
+
 var React = require('react');
 var NoteList = require('./NoteList.jsx');
 var NoteStore = require('../../stores/NoteStore');
 
-var NoteListBox = React.createClasse({
+var NoteListBox = React.createClass({
 	getInitialState:function(){
 		return {
 			notes: NoteStore.getNotes(),

@@ -1,3 +1,7 @@
+/**
+ * @jsx React.DOM
+ */
+
 var React = require('react');
 var TextArea = require('./TextArea.jsx');
 var NoteStore = require('../../stores/NoteStore.js');
